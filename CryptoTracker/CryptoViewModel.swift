@@ -19,10 +19,8 @@ class CryptoViewModel: ObservableObject {
 
     func fetchCryptos() {
         isLoading = true  // Start loading
-        service.fetchCryptos()  // Call the function from CryptoService
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.cryptos = self.service.cryptos  // Update cryptos list
+        service.fetchCryptos { fetchedCryptos in
+            self.cryptos = fetchedCryptos  // Update cryptos list with the fetched data
             self.isLoading = false  // Stop loading
         }
     }

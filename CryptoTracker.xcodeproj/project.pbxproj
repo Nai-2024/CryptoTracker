@@ -6,14 +6,76 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		08C1D1572D70AF7500C0A2B3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C1D1562D70AF7500C0A2B3 /* WidgetKit.framework */; };
+		08C1D1592D70AF7500C0A2B3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C1D1582D70AF7500C0A2B3 /* SwiftUI.framework */; };
+		08C1D1642D70AF7700C0A2B3 /* CryptoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 08C1D1542D70AF7500C0A2B3 /* CryptoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08C1D1622D70AF7700C0A2B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08C1CFC72D678B49001F2485 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08C1D1532D70AF7500C0A2B3;
+			remoteInfo = CryptoWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		08C1D1652D70AF7700C0A2B3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				08C1D1642D70AF7700C0A2B3 /* CryptoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		08C1CFCF2D678B49001F2485 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08C1D1542D70AF7500C0A2B3 /* CryptoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CryptoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		08C1D1562D70AF7500C0A2B3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		08C1D1582D70AF7500C0A2B3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		08C1D1682D70AF7700C0A2B3 /* Exceptions for "CryptoWidget" folder in "CryptoWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 08C1D1532D70AF7500C0A2B3 /* CryptoWidgetExtension */;
+		};
+		08C1D16B2D70B2CF00C0A2B3 /* Exceptions for "CryptoTracker" folder in "CryptoWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Crypto.swift,
+				CyryptoService.swift,
+			);
+			target = 08C1D1532D70AF7500C0A2B3 /* CryptoWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		08C1CFD12D678B49001F2485 /* CryptoTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				08C1D16B2D70B2CF00C0A2B3 /* Exceptions for "CryptoTracker" folder in "CryptoWidgetExtension" target */,
+			);
 			path = CryptoTracker;
+			sourceTree = "<group>";
+		};
+		08C1D15A2D70AF7500C0A2B3 /* CryptoWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				08C1D1682D70AF7700C0A2B3 /* Exceptions for "CryptoWidget" folder in "CryptoWidgetExtension" target */,
+			);
+			path = CryptoWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +88,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08C1D1512D70AF7500C0A2B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C1D1592D70AF7500C0A2B3 /* SwiftUI.framework in Frameworks */,
+				08C1D1572D70AF7500C0A2B3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				08C1CFD12D678B49001F2485 /* CryptoTracker */,
+				08C1D15A2D70AF7500C0A2B3 /* CryptoWidget */,
+				08C1D1552D70AF7500C0A2B3 /* Frameworks */,
 				08C1CFD02D678B49001F2485 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +114,18 @@
 			isa = PBXGroup;
 			children = (
 				08C1CFCF2D678B49001F2485 /* CryptoTracker.app */,
+				08C1D1542D70AF7500C0A2B3 /* CryptoWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		08C1D1552D70AF7500C0A2B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08C1D1562D70AF7500C0A2B3 /* WidgetKit.framework */,
+				08C1D1582D70AF7500C0A2B3 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +138,12 @@
 				08C1CFCB2D678B49001F2485 /* Sources */,
 				08C1CFCC2D678B49001F2485 /* Frameworks */,
 				08C1CFCD2D678B49001F2485 /* Resources */,
+				08C1D1652D70AF7700C0A2B3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				08C1D1632D70AF7700C0A2B3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				08C1CFD12D678B49001F2485 /* CryptoTracker */,
@@ -69,6 +154,28 @@
 			productName = CryptoTracker;
 			productReference = 08C1CFCF2D678B49001F2485 /* CryptoTracker.app */;
 			productType = "com.apple.product-type.application";
+		};
+		08C1D1532D70AF7500C0A2B3 /* CryptoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08C1D1692D70AF7700C0A2B3 /* Build configuration list for PBXNativeTarget "CryptoWidgetExtension" */;
+			buildPhases = (
+				08C1D1502D70AF7500C0A2B3 /* Sources */,
+				08C1D1512D70AF7500C0A2B3 /* Frameworks */,
+				08C1D1522D70AF7500C0A2B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				08C1D15A2D70AF7500C0A2B3 /* CryptoWidget */,
+			);
+			name = CryptoWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CryptoWidgetExtension;
+			productReference = 08C1D1542D70AF7500C0A2B3 /* CryptoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +188,9 @@
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					08C1CFCE2D678B49001F2485 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					08C1D1532D70AF7500C0A2B3 = {
 						CreatedOnToolsVersion = 16.1;
 					};
 				};
@@ -100,12 +210,20 @@
 			projectRoot = "";
 			targets = (
 				08C1CFCE2D678B49001F2485 /* CryptoTracker */,
+				08C1D1532D70AF7500C0A2B3 /* CryptoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		08C1CFCD2D678B49001F2485 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08C1D1522D70AF7500C0A2B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +240,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08C1D1502D70AF7500C0A2B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08C1D1632D70AF7700C0A2B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08C1D1532D70AF7500C0A2B3 /* CryptoWidgetExtension */;
+			targetProxy = 08C1D1622D70AF7700C0A2B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		08C1CFDB2D678B4C001F2485 /* Debug */ = {
@@ -300,6 +433,58 @@
 			};
 			name = Release;
 		};
+		08C1D1662D70AF7700C0A2B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nai.CryptoTracker.CryptoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		08C1D1672D70AF7700C0A2B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CryptoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nai.CryptoTracker.CryptoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -317,6 +502,15 @@
 			buildConfigurations = (
 				08C1CFDE2D678B4C001F2485 /* Debug */,
 				08C1CFDF2D678B4C001F2485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08C1D1692D70AF7700C0A2B3 /* Build configuration list for PBXNativeTarget "CryptoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08C1D1662D70AF7700C0A2B3 /* Debug */,
+				08C1D1672D70AF7700C0A2B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

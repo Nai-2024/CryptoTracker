@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Crypto: Identifiable, Codable {
+public struct Crypto: Identifiable, Codable {
     
-    let id: String
-    let symbol: String
-    let name: String
-    let current_price: Double
-    let price_change_percentage_24h: Double
-    let image: String
+    public let id: String
+    public let symbol: String
+    public let name: String
+    public let current_price: Double
+    public let price_change_percentage_24h: Double
+    public let image: String
 }

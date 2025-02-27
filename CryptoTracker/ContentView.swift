@@ -4,21 +4,12 @@
 //
 //  Created by Din Salehy on 2025-02-20.
 
- // @StateObject var viewModel = CryptoViewModel() → Uses the ViewModel to get crypto data.
- // List(viewModel.cryptos) → Displays a list of cryptocurrencies.
- // AsyncImage(url: URL(string: crypto.image)) → Loads the coin's image.
- // Text(crypto.name) → Displays the name (e.g., "Bitcoin").
- // Text(crypto.symbol.uppercased()) → Shows the symbol (e.g., "BTC").
- // Text("$\(crypto.current_price, specifier: "%.2f")") → Displays the price with two decimal places.
- // Text("\(crypto.price_change_percentage_24h, specifier: "%.2f")%") → Shows 24-hour price change (green for positive, red for negative).
- // .onAppear { viewModel.fetchCryptos() } → Fetches data when the screen appears.
- 
-
 import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = CryptoViewModel()  // Connect ViewModel
-
+      @State private var crypto: Crypto?  // Add a state variable to store the fetched crypto
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -37,8 +28,8 @@ struct ContentView: View {
                                 }
                                 .frame(width: 30, height: 30)
                                 .clipShape(Circle())  // Optional: Makes the image circular
-
-
+                                
+                                
                                 VStack(alignment: .leading) {
                                     Text(crypto.name)  // Show crypto name
                                         .font(.headline)
@@ -46,9 +37,9 @@ struct ContentView: View {
                                         .font(.subheadline)
                                         .foregroundColor(.gray)
                                 }
-
+                                
                                 Spacer()
-
+                                
                                 VStack(alignment: .trailing) {
                                     Text("$\(crypto.current_price, specifier: "%.2f")")  // Show price
                                         .font(.headline)
@@ -68,12 +59,14 @@ struct ContentView: View {
             .navigationTitle("Crypto Prices")  // Set screen title
         }
         .onAppear {
-            viewModel.fetchCryptos()  // Load data when the view appears
+            // Call the fetch function when the view appears
+            CryptoService().fetchSingleCrypto { fetchedCrypto in
+                self.crypto = fetchedCrypto
+            }
         }
     }
 }
-
-
-#Preview {
-    ContentView()
-}
+    
+    #Preview {
+        ContentView()
+    }
